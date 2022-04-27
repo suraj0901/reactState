@@ -37,13 +37,16 @@ export const useCounter = createStore({
   },
   action: {
     increament(state) {
-      return { count: ++state.count };
+      ++state.count;
+      return state;
     },
     decreament(state) {
-      return { count: --state.count };
+      --state.count;
+      return state;
     },
     setCount(state, value) {
-      return { count: value };
+      state.count = value;
+      return state;
     },
   },
 });
